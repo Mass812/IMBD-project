@@ -40,6 +40,9 @@ const MovieCard = () => {
 
 console.log('after useEffect movies returned: ', moviesReturned)
 
+const jump =()=>{
+  window.scrollTo(0,0)
+}
 
 
 
@@ -54,9 +57,9 @@ const displayMovies = moviesReturned.map((n,id)=> (
   <div className="movie-info">
     <div className="movie-head-title">{n.title} </div>
     <div className="movie-overview">{n.overview}</div>
-    <div className="movie-date">{n.release_date}</div>
+    <div className="movie-date">Release Date: {''}{n.release_date}</div>
     <div className="movie-genre">{n.genre_ids}</div>
-    <div className="movie-head-3">{n.poster_path}</div>
+    <div className="movie-head-3">Mass Movie Search</div>
     <div className="movie-popularity">{n.popularity}</div>
   </div>
 </div>
@@ -70,7 +73,7 @@ const displayMovies = moviesReturned.map((n,id)=> (
     <div className='movie-card--housing-container'>
       <div className="movie-button--housing">
       <h1> 
-      Movie Splat
+      Movie Search
       </h1>
         <input
         className='search-box'
@@ -79,7 +82,7 @@ const displayMovies = moviesReturned.map((n,id)=> (
           onBlur={searchForTyped}
         />
         <button className='search-button' onSubmit={searchForTyped}>Search Movies </button>
-        
+        <button className='jump-button' onClick={jump}>Jump to Top</button>
     <div>{displayMovies}</div>
    
       </div>

@@ -20,31 +20,57 @@ body {
 }
 
 .search-box {
-    color: green;
-    height: 30px;
-    padding: 3px 5px;
-    margin: 10px;
+  color: green;
+  height: 40px;
+  padding: 3px 5px;
+  margin: 10px;
+  border-color: green;
+
+  &:active {
+      border: green;
+      box-shadow: 5px 5px 5px green;
+
+  }
 }
 
 .search-button {
-    height: 32px;
-    border-radius: 3px; 
-    border-color: skyblue;
-    padding: 5px;
-    font-size: 18px;
-    align-self: center;
+  height: 32px;
+  border-radius: 25px;
+  border-color: skyblue;
+  padding: 5px;
+  font-size: 18px;
+  align-self: center;
+
+  &:active{
+      box-shadow: 3px 3px 5px green;
+  }
+}
+
+.jump-button {
+  position: fixed;
+  scroll-behavior: smooth;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  height: 100px;
+  width: 100px;
+  background-color: rgba(135, 207, 235, 0.507);
+  color: rgba(0, 0, 0, 0.486);
+  font-weight: 700;
+  border-radius: 50%;
+  box-shadow: -2px -2px 4px grey;
 }
 
 .movie-card-container {
- width: 100%;
- border: .25px solid black;
- margin: 20px 0px;
- box-shadow: 3px 3px 10px black;
- border-radius: 5%;
+  width: 100%;
+  border: 0.25px solid black;
+  margin: 20px 0px;
+  box-shadow: 3px 3px 10px black;
+  border-radius: 5%;
 
-//   display: flex;
+  //   display: flex;
 
-padding-bottom: 30px;
+  padding-bottom: 30px;
   min-height: 420px;
 }
 
@@ -60,9 +86,8 @@ padding-bottom: 30px;
 .movie-card-image {
   border-radius: inherit;
 }
-.movie-info 
-{
-    max-width: 500px;
+.movie-info {
+  max-width: 500px;
   padding: 10px;
 
   z-index: 12;
@@ -72,14 +97,14 @@ padding-bottom: 30px;
 }
 
 .movie-head-title {
-    max-width: 500px;
+  max-width: 500px;
   padding-right: -10px;
   color: black;
   font-size: 42px;
 }
 
 .movie-overview {
-    max-width: 500px;
+  max-width: 500px;
   padding: 0;
   color: $color;
   justify-content: left;
@@ -91,28 +116,28 @@ padding-bottom: 30px;
   flex: 1;
 }
 .movie-date {
-    max-width: 500px;
-    color: $color;
-    justify-content: right;
-    text-align: right;
-    font-size: 16px;
+  max-width: 500px;
+  color: $color;
+  justify-content: right;
+  text-align: right;
+  font-size: 16px;
 }
 .movie-genre {
-    max-width: 500px;
-    color: $color;
-    justify-content: right;
-    text-align: right;
-    font-size: 16px;
+  max-width: 500px;
+  color: $color;
+  justify-content: right;
+  text-align: right;
+  font-size: 16px;
 }
 .movie-head-3 {
-    max-width: 500px;
-    color: $color;
-    justify-content: right;
-    text-align: right;
-    font-size: 16px;
+  max-width: 500px;
+  color: $color;
+  justify-content: right;
+  text-align: right;
+  font-size: 16px;
 }
 .movie-popularity {
-    max-width: 500px;
+  max-width: 500px;
   color: $color;
   justify-content: right;
   text-align: right;
