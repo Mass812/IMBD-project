@@ -1,0 +1,120 @@
+* {
+  box-sizing: border-box;
+}
+
+$color: black;
+
+body {
+  background-color: #eee;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Lato;
+}
+
+.movie-card--housing-container {
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.search-box {
+    color: green;
+    height: 30px;
+    padding: 3px 5px;
+    margin: 10px;
+}
+
+.search-button {
+    height: 32px;
+    border-radius: 3px; 
+    border-color: skyblue;
+    padding: 5px;
+    font-size: 18px;
+    align-self: center;
+}
+
+.movie-card-container {
+ width: 100%;
+ border: .25px solid black;
+ margin: 20px 0px;
+ box-shadow: 3px 3px 10px black;
+ border-radius: 5%;
+
+//   display: flex;
+
+padding-bottom: 30px;
+  min-height: 420px;
+}
+
+.image-container {
+  //  clip-path: circle(90% at 30px 30px);
+  -webkit-clip-path: circle(90% at 30px 30px);
+  clip-path: circle(97% at 80px 99px);
+
+  box-shadow: 3px 3px 10px black;
+  border-radius: 5%;
+  max-width: 500px;
+}
+.movie-card-image {
+  border-radius: inherit;
+}
+.movie-info 
+{
+    max-width: 500px;
+  padding: 10px;
+
+  z-index: 12;
+  width: 100%;
+  justify-content: center;
+  text-align: right;
+}
+
+.movie-head-title {
+    max-width: 500px;
+  padding-right: -10px;
+  color: black;
+  font-size: 42px;
+}
+
+.movie-overview {
+    max-width: 500px;
+  padding: 0;
+  color: $color;
+  justify-content: left;
+  text-align: left;
+  font-size: 20px;
+  margin-left: 50px;
+  padding: 20px;
+
+  flex: 1;
+}
+.movie-date {
+    max-width: 500px;
+    color: $color;
+    justify-content: right;
+    text-align: right;
+    font-size: 16px;
+}
+.movie-genre {
+    max-width: 500px;
+    color: $color;
+    justify-content: right;
+    text-align: right;
+    font-size: 16px;
+}
+.movie-head-3 {
+    max-width: 500px;
+    color: $color;
+    justify-content: right;
+    text-align: right;
+    font-size: 16px;
+}
+.movie-popularity {
+    max-width: 500px;
+  color: $color;
+  justify-content: right;
+  text-align: right;
+  font-size: 16px;
+}
