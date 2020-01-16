@@ -83,9 +83,11 @@ const displayMovies = moviesReturned.map((n,id)=> (
         />
         <button className='search-button' onSubmit={searchForTyped}>Search Movies </button>
         <button className='jump-button' onClick={jump}>Jump to Top</button>
-    <div>{displayMovies}</div>
    
       </div>
+    <div>{displayMovies}</div>
+    <span>"This product uses the TMDb API but is not endorsed or certified by TMDb."</span>
+    <span>"This product uses the TMDb API but is not endorsed or certified by TMDb."</span>
     </div>
   );
 };
