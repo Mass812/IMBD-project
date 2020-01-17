@@ -46,7 +46,7 @@ const MovieCard = () => {
   };
 
   const displayMovies = moviesReturned.map((n, id) => (
-    <div>
+    <div key={id} >
       <div key={id} className="movie-card-container">
         <div className="image-container">
           <img
@@ -68,7 +68,7 @@ const MovieCard = () => {
 
 
 
-      <div key={id} className="movie-card-container-backside">
+      <div className="movie-card-container-backside">
          <div className='image-container-backside'>
            <img
             className="movie-card-image-backside"
