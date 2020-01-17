@@ -42,6 +42,7 @@ const MovieCard = () => {
     if (event.which === 13 || event.keyCode === 13) {
       console.log("onEnter fired");
       searchForTyped(typed);
+      event.target.blur();
     }
   };
 
