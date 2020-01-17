@@ -1,11 +1,12 @@
 import React from 'react';
-import MovieCard from './Movie/MovieCard'
+ import Framework from './Components/Framework/Framework'
 import './App.css';
+import MovieCard from './Components/Movie/MovieCard'
 
 function App() {
   return (
     <div className="App">
-     <MovieCard />
+      <Framework /> 
      </div>
   );
 }
