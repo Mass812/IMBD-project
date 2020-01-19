@@ -3,7 +3,6 @@ import axios from "axios";
 import "./MovieCard.scss";
 import MovieSearch from "./MovieSearch";
 
-
 const MovieCard = () => {
   const [searchTerm, setSearchTerm] = useState("green");
   const [typed, setTyped] = useState("");
@@ -11,33 +10,21 @@ const MovieCard = () => {
   const [movieDetails, setMovieDetails] = useState([]);
   const [pageNum, setPageNum] = useState(1);
 
-
-
-
-
   const API_KEY = process.env.REACT_APP_TMBD_KEY;
 
-
-  
   useEffect(() => {
- 
-    const movieDBSearch = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchTerm}&page=${pageNum}`;
-    
-   
-      axios
-        .get(movieDBSearch)
-        .then(res => res.data.results)
-        .then(res => {
-          setMoviesReturned(res)})
-        .catch(err => console.error(err, "☹️"));
+    const movieDBSearch = `https://api.themoviedb.org/3/search/movie?api_key=2121f2ad7169f32e4b2cab5cf77d32cd&query=${searchTerm}&page=${pageNum}`;
 
-    return () => {
-      
-    };
+    axios
+      .get(movieDBSearch)
+      .then(res => res.data.results)
+      .then(res => {
+        setMoviesReturned(res);
+      })
+      .catch(err => console.error(err, "☹️"));
+
+    return () => {};
   }, [searchTerm, pageNum, API_KEY]);
-
- 
-
 
   const searchForTyped = () => {
     setSearchTerm(typed);
@@ -62,25 +49,27 @@ const MovieCard = () => {
     }
   };
 
-  const moreInfo =(id)=>{
-    console.log(id)
-    const mDetails = `https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}&append_to_response=credits`;
-        axios 
-          .get(mDetails)
-            .then(res=> res.data)
-            .then(res=>
-              setMovieDetails([res]));
-    console.log('MovieDetails',movieDetails)
-  }
+  const moreInfo = id => {
+    console.log(id);
+    const mDetails = `https://api.themoviedb.org/3/movie/${id}?api_key=2121f2ad7169f32e4b2cab5cf77d32cd&append_to_response=credits`;
+    axios
+      .get(mDetails)
+      .then(res => res.data)
+      .then(res => setMovieDetails([res]));
+    console.log("MovieDetails", movieDetails);
+  };
 
   const next = () => {
-     setPageNum(pageNum + 1);
-      window.scrollTo(0, 0);
+    setPageNum(pageNum + 1);
+    window.scrollTo(0, 0);
   };
 
   const displayMovies = moviesReturned.map((n, id) => (
     <div key={id}>
-      <div onLoad={()=>moreInfo(n.id)} key={id} className="movie-card-container">
+      <div
+        onLoad={() => moreInfo(n.id)}
+        key={id}
+        className="movie-card-container">
         <div className="image-container">
           <img
             className="movie-card-image"
@@ -98,31 +87,24 @@ const MovieCard = () => {
           <div className="movie-details">
             <hr />
             This movie was released on {n.release_date}
-           { movieDetails ? <div> {movieDetails.map((m, id)=> (
-             <div key={id} className='extra-detail-parent'>
-              <div>{m.runtime} minute runtime</div>
-            {/* <div> {m.credits.crew[0].job} : {m.credits.crew[0].name} </div> 
+            {movieDetails ? (
+              <div>
+                {" "}
+                {movieDetails.map((m, id) => (
+                  <div key={id} className="extra-detail-parent">
+                    <div>{m.runtime} minute runtime</div>
+                    {/* <div> {m.credits.crew[0].job} : {m.credits.crew[0].name} </div> 
             <div> {m.credits.crew[1].job} : {m.credits.crew[1].name} </div>
               <div>{m.runtime} minute runtime</div>
               <div>{m.runtime} minute runtime</div> */}
-
-              
-
-
-
-
-           </div> ))} </div> : null}
+                  </div>
+                ))}{" "}
+              </div>
+            ) : null}
           </div>
-      
-
         </div>
       </div>
     </div>
-
-
-
-
-
   ));
   console.log("one pull: ====> ", moviesReturned);
 

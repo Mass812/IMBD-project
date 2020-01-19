@@ -7,7 +7,8 @@ const LeftSection = () => {
 
   const API_KEY = process.env.REACT_APP_TMBD_KEY;
   useEffect(() => {
-   const pullNewReleases = `https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`;
+  // const pullNewReleases = `https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`;
+    const pullNewReleases = `https://api.themoviedb.org/3/trending/all/day?api_key=2121f2ad7169f32e4b2cab5cf77d32cd`;
 
     axios
       .get(pullNewReleases)
