@@ -3,15 +3,16 @@
 }
 @media all and (max-width: 810px) {
   .framework {
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.096);
+    
  
     justify-content: center;
     text-align: center;
   }
 
   .framework-under-header {
-    display: flex;
-    height: 10px;
+
+    height: 20px;
     flex-direction: column;
     background: rgb(0, 0, 0);
     background: -moz-linear-gradient(
@@ -66,6 +67,7 @@
     justify-content: center;
     text-align: center;
     align-self: center;
+    background-color: rgb(11, 58, 54);
   }
 
   .framework-section-two {
@@ -74,6 +76,7 @@
     justify-content: center;
     text-align: center;
     align-self: center;
+    background-color: rgb(11, 58, 54);
   }
 
   .framework-section-three {
@@ -89,9 +92,128 @@
     grid-area: main;
   }
 }
-//fpr cell phones
-@media all and (min-width: 810px) {
-  .framework {
+
+
+
+
+
+
+
+
+
+
+//fpr large phones
+@media (min-width: 811px) {
+
+  .framework-container {
     display: flex;
+    flex-direction: column;
+
+
   }
+
+  
+
+  .framework-under-header {
+
+    height: 10px;
+    flex-direction: row;
+    background: rgb(0, 0, 0);
+    background: -moz-linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 30%,
+      rgb(0,90,90) 68%
+    );
+    background: -webkit-linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 30%,
+      rgb(0,90,90) 68%
+    );
+    background: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 1) 30%,
+      rgb(0,90,90) 68%
+    );
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#005500",GradientType=1);
+  }
+
+  .framework-header {
+    //display: flex;
+    
+    background-color: rgb(0, 0, 0);
+    font-family: "Cinzel", serif;
+    justify-content: center;
+    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    text-shadow: 1px 1px rgb(59, 65, 59);
+    color: rgba(34, 80, 32, 0.877);
+    padding-bottom:0;
+    margin:0;
+
+
+
+  }
+  .greenLantern {
+    flex: 1;
+    justify-self: flex-start;
+    size: contain;
+    height: 100px;
+    width: 100px;
+    margin: 20px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+ 
+  }
+
+
+  .framework {
+  
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: rgb(11, 58, 54);
+ 
+    justify-content: row;
+    text-align: center;
+  }
+
+  .framework-section-one {
+    display: flex;
+   flex: 3;
+    border: 1px solid grey;
+    font-family: "Cinzel", serif;
+    color: white;
+    text-align: center;
+    flex-wrap: wrap;
+    height: 400px;
+    overflow: scroll;
+    padding: 25px;
+    background-color: rgb(11, 58, 54);
+  }
+
+  .framework-section-two {
+    flex:1;
+    background-color: rgb(17, 17, 27);
+    border: 1px solid grey;
+    font-family: "Cinzel", serif;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+    height: 400px;
+    width: 300px;
+  }
+
+
+
+  .framework-section-main {
+    flex: 1;
+    align-self: center;
+    justify-self: center;
+
+    
+  }
+
+
+
 }

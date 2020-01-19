@@ -1,0 +1,42 @@
+
+
+
+.trending-card-body {
+    display:inline-table;
+    flex-direction: row;
+  //  text-align: center;
+    width: 160px;
+    height: 270px;
+    color: white;
+    box-sizing: content-box;
+    box-shadow: 0px 0px 7px black;;
+    margin: 20px;
+   // background-color: white;
+   border-radius: 25px;
+   flex-wrap: wrap;
+}
+
+.trending {
+height: 40px;
+}
+
+.trending-photo-body{
+    background-color: rgb(255, 255, 255);
+    color: black;
+    font-weight: 500;
+    width: 160px;
+    height: 250px;
+    max-width: 300px;
+    max-height: 450px;
+    border-radius: inherit;
+    
+}
+
+.trending-photo {
+    size: contain;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    
+}
+
