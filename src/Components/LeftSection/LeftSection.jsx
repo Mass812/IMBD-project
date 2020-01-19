@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./LeftSection.scss";
+import { Link } from "react-router-dom";
 
 const LeftSection = () => {
   const [newlyReleased, setNewlyReleased] = useState([]);
 
   const API_KEY = process.env.REACT_APP_TMBD_KEY;
   useEffect(() => {
-  // const pullNewReleases = `https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`;
+    // const pullNewReleases = `https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`;
     const pullNewReleases = `https://api.themoviedb.org/3/trending/all/day?api_key=2121f2ad7169f32e4b2cab5cf77d32cd`;
 
     axios
@@ -19,21 +20,25 @@ const LeftSection = () => {
       .catch(err => console.error(err, "☹️"));
 
     return () => {
-      console.log("left area use effect fired", );
+      console.log("left area use effect fired");
     };
-  },[]);
+  }, []);
 
-  console.log('new and trending', newlyReleased)
+  console.log("new and trending", newlyReleased);
 
   const nowTrending = newlyReleased.map((n, id) => (
-    <div key={n.id} className='trending-card-body'>
-       <div className='trending-photo-body'>
-
-        <div className="trending">{!n.title ? 'No Title' : n.title}</div>
-        <img className='trending-photo' src={`https://image.tmdb.org/t/p/w500${n.poster_path}`} alt={n.title} />
-       </div>
-      
-    </div>
+    <Link to={`/trending/${n.id}`}>
+      <div key={n.id} className="trending-card-body">
+        <div className="trending-photo-body">
+          <div className="trending">{!n.title ? "No Title" : n.title}</div>
+          <img
+            className="trending-photo"
+            src={`https://image.tmdb.org/t/p/w500${n.poster_path}`}
+            alt={n.title}
+          />
+        </div>
+      </div>
+    </Link>
   ));
 
   return (

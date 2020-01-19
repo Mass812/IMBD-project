@@ -1,11 +1,10 @@
 * {
   box-sizing: content-box;
+  
 }
 @media all and (max-width: 810px) {
-  .framework {
+  .framework-container {
     background-color: rgba(0, 0, 0, 0.096);
-    
- 
     justify-content: center;
     text-align: center;
   }
@@ -68,6 +67,10 @@
     text-align: center;
     align-self: center;
     background-color: rgb(11, 58, 54);
+    scrollbar-width: thin;
+     scrollbar-color: green black;
+     padding-bottom: 25px;
+  
   }
 
   .framework-section-two {
@@ -190,6 +193,10 @@
     overflow: scroll;
     padding: 25px;
     background-color: rgb(11, 58, 54);
+   
+     scrollbar-width: thin;
+     scrollbar-color: green black;
+   
   }
 
   .framework-section-two {

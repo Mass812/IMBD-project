@@ -22,7 +22,11 @@ const greenLanternLogo = require('../../Assets/greenLanternMWlogo2.jpg')
       <section className="framework-section-one">  New & Trending 
       <LeftSection/>
       </section>
-      <section className="framework-section-two">Best Rated</section>
+      <section className="framework-section-two">Section 2: Highest Grossing Rated
+      
+      
+      
+      </section>
     </div>
     <div className="framework-section-main">
         <MovieCard />
