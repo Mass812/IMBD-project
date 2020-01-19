@@ -52,6 +52,9 @@ $color: black;
   
   .movie-button--housing {
     flex: 1;
+    h1 {
+      color: white;
+    }
   }
   .search-box {
     flex: 1;
@@ -388,6 +391,9 @@ $color: black;
   .movie-button--housing {
     flex: 1;
     padding: 40px;
+    h1 {
+      color: white;
+    }
   }
   .search-box {
     flex: 1;
