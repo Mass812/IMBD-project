@@ -10,7 +10,6 @@ const MovieCard = () => {
   const [moviesReturned, setMoviesReturned] = useState([]);
   const [movieDetails, setMovieDetails] = useState([]);
   const [pageNum, setPageNum] = useState(1);
-  const [allData, setAllData] = useState({});
 
 
 
