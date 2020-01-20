@@ -350,52 +350,24 @@ $color: black;
     text-align: center;
     justify-content: center;
     align-items: center;
-    background: rgb(8, 26, 56);
-    background: -moz-linear-gradient(
-      90deg,
-      rgba(8, 26, 56, 1) 0%,
-      rgba(17, 102, 108, 1) 29%,
-      rgba(18, 117, 118, 1) 35%,
-      rgba(22, 151, 142, 1) 48%,
-      rgba(23, 159, 147, 1) 51%,
-      rgba(8, 26, 56, 1) 100%
-    );
-    background: -webkit-linear-gradient(
-      90deg,
-      rgba(8, 26, 56, 1) 0%,
-      rgba(17, 102, 108, 1) 29%,
-      rgba(18, 117, 118, 1) 35%,
-      rgba(22, 151, 142, 1) 48%,
-      rgba(23, 159, 147, 1) 51%,
-      rgba(8, 26, 56, 1) 100%
-    );
-    background: linear-gradient(
-      90deg,
-      rgba(8, 26, 56, 1) 0%,
-      rgba(17, 102, 108, 1) 29%,
-      rgba(18, 117, 118, 1) 35%,
-      rgba(22, 151, 142, 1) 48%,
-      rgba(23, 159, 147, 1) 51%,
-      rgba(8, 26, 56, 1) 100%
-    );
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#081a38",endColorstr="#081a38",GradientType=1);
+    background: transparent;
   }
   
   .movie-housing-container {
-    width: 100%;
-    height: 100%;
-    overflow: scroll;
-    flex-direction: row;
+   
+   
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    padding: 25px;
+    padding: 10px;
+    
+  
   
   }
   
   .movie-button--housing {
     flex: 1;
-    padding: 10px;
+    padding: 5px;
     h1 {
       color: white;
       font-weight: 500;
@@ -410,8 +382,8 @@ $color: black;
     margin: 10px;
     border-color: green;
     font-size: 18px;
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
-      "Lucida Sans", Arial, sans-serif;
+    
+    letter-spacing: 3px;
     &:active {
       border: green;
       box-shadow: 0px 0px 15px green;
@@ -484,27 +456,29 @@ $color: black;
   
   
   .movie-card-container {
-    display: flex;
-   // flex: 1;
-    margin: 50px;
+    display: inline-table;
+   flex: 1;
+  justify-content: center;
     z-index: 2;
    // position: relative;
     flex-direction: row;
     overflow: hidden;
-    width: 90%;
+    width: 60%;
+    height: 340px;
     //max-width: 650px;
     margin-bottom: 25px;
     justify-content: center;
     align-content: space-around;
     border-radius: 20px;
     box-sizing: content-box;
-    background-color: rgb(250, 250, 250);
-    border: 1px solid black;
+    background-color: black;
+    box-shadow: 4px 2px 8px black;
+    
     &:hover {
      
       cursor: pointer;
       box-shadow: 0px 0px 15px black;
-      background-color: rgb(250, 250, 250);
+      
     }
 
   }
@@ -526,24 +500,7 @@ $color: black;
     height: inherit;
   }
   
-  
-  
-  .movie-card-image-backside{
-    width: 100%;
-    height: inherit;
-  }
-  
-  .movie-info {
-    border-radius: inherit;
-    padding: 10px;
-    width: 100%;
-    align-items: center;
-    text-align: center;
-    justify-content: space-between;
-    background-color: rgb(246, 246, 245);
-  }
 
-  
   .movie-head-title {
     padding-bottom: 25px;
     padding-right: -10px;
@@ -553,44 +510,10 @@ $color: black;
     text-shadow: 1px 1px 2px white;
   }
   
-  .movie-overview {
-    padding: 0;
-    color: $color;
-    justify-content: center;
-    text-align: left;
-    font-size: 14px;
-    font-weight: bold;
-    color: rgb(54, 61, 82);
-  }
-  .movie-date {
-    color: $color;
-    justify-content: center;
-    text-align: center;
-    font-size: 12px;
-    padding-top: 30px;
-    font-family: 'Montserrat';
-    font-weight: 900;
-  }
-  .movie-genre {
-    color: $color;
-    justify-content: right;
-    text-align: right;
-    font-size: 16px;
-  }
-  .movie-head-3 {
-    color: $color;
-    justify-content: right;
-    text-align: right;
-    font-size: 16px;
-  }
-  .movie-popularity {
-    color: $color;
-    justify-content: right;
-    text-align: right;
-    font-size: 16px;
-  }
-  
-  
+ 
+ 
+ 
+
   
   }    
 

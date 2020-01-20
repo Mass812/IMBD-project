@@ -14,28 +14,21 @@ const Framework = () => {
           src={greenLanternLogo}
           alt={'Matt Wellman Logo'}
         />
-        <h1>
-        Movie Warehouse
-        </h1>
-        <span>
-        "This product uses the TMDb API but is not endorsed or certified by
-        TMDb."
-      </span>
+        <h1>Movie Warehouse</h1>
+        <div className='tmbd-issue'>
+          "I use the TMDb API, this site's not endorsed or certified by TMDb."
+        </div>
       </header>
-      <div className='framework-under-header' />
       <div className='framework'>
+      <div className='framework-under-header' />
         <section className='framework-section-one'>
           {' '}
           New & Trending
           <LeftSection />
         </section>
         <section className='framework-section-two'>
-          Section 2: Highest Grossing Rated
           <MovieCard />
         </section>
-      </div>
-      <div className='framework-section-main'>
-      
       </div>
     </div>
   );

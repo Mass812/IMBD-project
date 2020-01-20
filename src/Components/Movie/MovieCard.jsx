@@ -66,7 +66,7 @@ const MovieCard = () => {
   const displayMovies = moviesReturned.map((n, id) => (
     <Link to={`/trending/${n.id}`} style={{textDecoration: 'none'}}>
 
-    <div key={id}>
+   
       <div
         onLoad={() => moreInfo(n.id)}
         key={id}
@@ -83,7 +83,7 @@ const MovieCard = () => {
           />
         </div>
       </div>
-    </div>
+   
     </Link>
   ));
   console.log("one pull: ====> ", moviesReturned);

@@ -9,7 +9,7 @@ import './MovieCard.scss';
           <h1>Movie Search</h1>
           <input
             className="search-box"
-            placeholder="Search for a Movie"
+            placeholder="Search Here"
             onChange={props.onChange}
             onBlur={props.onBlur}
             onKeyPress={props.onKeyPress}
