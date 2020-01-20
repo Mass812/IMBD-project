@@ -51,7 +51,7 @@ const SpecificTrendingMovieDetails = () => {
               <ul className="movie-gen">
                 <li>{n.release_date}/</li>
                 <li>{n.runtime} minute show time /</li>
-                <li>{n.tagline}</li>
+                <li style={{color: 'teal'}}>"{n.tagline}"</li>
               </ul>
             </div>
           </div>
@@ -60,17 +60,45 @@ const SpecificTrendingMovieDetails = () => {
               <h5>{n.overview}</h5>
           
             <div className="col2">
-               <ul className="movie-likes">
-                <li><i className="material-icons">&#xE813;</i>124</li>
-                <li><i className="material-icons">&#xE813;</i>3</li>
+               <ul className="movie-review">
+                <li >Rating:   {n.vote_average} </li>
+                <li>Poularity: {n.popularity}</li>
               </ul>
             </div>
           </div>
           
-          <div className="mr-grid actors-row">
-            <div className="col1">
-              <p className="movie-actors">{n.credits.crew[0].name}, {n.credits.crew[1].name}, {n.credits.crew[2].name}</p>
-            </div>
+          <div className="actors-row-parent">
+          
+          <section className='actors-row-box'>
+              <div className='actors-box'>
+              <img src={n.credits.cast[0].profile_path === null
+                      ? require("../../Assets/greenLanternMWlogo2.jpg")
+                      : `https://image.tmdb.org/t/p/w500${n.credits.cast[0].profile_path}`} 
+                      style={{hieght:'70px', width: '70px'}}/>
+              <span className="movie-actors">{n.credits.cast[0].name}</span>
+              </div>
+              <div className='actors-box'>
+              <img src={n.credits.cast[1].profile_path === null
+                      ? require("../../Assets/greenLanternMWlogo2.jpg")
+                      : `https://image.tmdb.org/t/p/w500${n.credits.cast[1].profile_path}`} 
+                      style={{hieght:'70px', width: '70px'}}/>
+              <span className="movie-actors">{n.credits.cast[1].name}</span>
+              </div>
+              <div className='actors-box'>
+              <img src={n.credits.cast[2].profile_path === null
+                      ? require("../../Assets/greenLanternMWlogo2.jpg")
+                      : `https://image.tmdb.org/t/p/w500${n.credits.cast[2].profile_path}`} 
+                      style={{hieght:'70px', width: '70px'}}/>
+              <span className="movie-actors">{n.credits.cast[2].name}</span>
+              </div>
+          </section>
+              
+              
+              
+              
+              
+              
+            
           </div>
 
         </div>

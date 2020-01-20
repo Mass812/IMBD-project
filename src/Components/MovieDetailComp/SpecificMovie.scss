@@ -6,15 +6,44 @@
 
 
 $accent-color: #e7e7e7;
-$dark-color: #1e1b26;
+$dark-color: rgb(128,128,128);
 
 body {  
   
   background-position: center;
   background-size: cover;
-  background-repeat: repeat;
-  background-color: rgb(255, 255, 255);
-}
+  background-repeat: repeat;   background: rgb(8, 26, 56);
+  background: -moz-linear-gradient(
+    90deg,
+    rgba(8, 26, 56, 1) 0%,
+    rgba(17, 102, 108, 1) 29%,
+    rgba(18, 117, 118, 1) 35%,
+    rgba(22, 151, 142, 1) 48%,
+    rgba(23, 159, 147, 1) 51%,
+    rgba(8, 26, 56, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    90deg,
+    rgba(8, 26, 56, 1) 0%,
+    rgba(17, 102, 108, 1) 29%,
+    rgba(18, 117, 118, 1) 35%,
+    rgba(22, 151, 142, 1) 48%,
+    rgba(23, 159, 147, 1) 51%,
+    rgba(8, 26, 56, 1) 100%
+  );
+  background: linear-gradient(
+    90deg,
+    rgba(8, 26, 56, 1) 0%,
+    rgba(17, 102, 108, 1) 29%,
+    rgba(18, 117, 118, 1) 35%,
+    rgba(22, 151, 142, 1) 48%,
+    rgba(23, 159, 147, 1) 51%,
+    rgba(8, 26, 56, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#081a38",endColorstr="#081a38",GradientType=1);
+};
+
+
 
 .container{
   width:100%;
@@ -22,7 +51,7 @@ body {
 }
 .cellphone-container{  
   width:380px;
-  height:800px;
+  height:1000px;
   background-color:#1e1b26;
   margin : 60px auto 0 auto;
   box-shadow:5px 5px 115px -14px black;
@@ -141,6 +170,23 @@ h5 {
   }
 }
 
+.movie-review >li{
+  text-decoration: none;
+  font-family:$paragraph-font-family;
+  font-size:$text-summary;
+  color: rgb(21, 201, 214);
+  width:200px;
+  padding: 10px;
+  display:inline-block;
+  justify-content: space-around;
+  margin-right:10px;
+  font-weight:400;
+  margin-left: -54px;
+  overflow: hidden;
+
+}
+
+
 
 .movie-details {
   font-family:$paragraph-font-family;
@@ -168,7 +214,30 @@ h5 {
   font-style: italic;
   @extend .elements-distance;
 }
+.actors-row-parent{
+  width: 370px;
+  display: flex;
+  flex:1;
+  flex-direction: row;
+  padding: 3px;
+  //flex-wrap: wrap;
+}
 
+
+.actors-row-box{
+width: 370px;
+display:inline-flex;
+flex-direction: row;
+justify-content: space-evenly;
+background-color:rgb(30,27,38);
+}
+
+
+.actors-box{
+  width: 75px;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.116);
+}
 /* TYPOGRAPHY ENDS */
 
 /** GRID STARTS **/
@@ -177,10 +246,8 @@ h5 {
 
 .elements-distance{margin:0px}
 
-.mr-grid { width: 100%; }
-    .mr-grid:before, .mr-grid:after { content: ""; display: table; }
-    .mr-grid:after { clear: both; }
-    .mr-grid { *zoom: 1; }
+.mr-grid { width: 100%; display:inline-table;}
+
 
 .col1, .col2, .col3, .col3rest, .col4, .col4rest, .col5, .col5rest, .col6, .col6rest{ 
 	margin:0% 0.5% 0.5% 0.5%;
@@ -206,11 +273,3 @@ h5 {
 .col5rest { width: 77%; }
 .col6rest { width: 80.3333333333%;}
 
-.dribbble-link {
-  width: 50px;
-  height: 50px;
-  position: fixed;
-  bottom: 15px;
-  right: 15px;
-  border-radius: 50px;
-}

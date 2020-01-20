@@ -31,12 +31,12 @@ const LeftSection = () => {
     <Link to={`/trending/${n.id}`}>
       <div key={n.id} className="trending-card-body">
         <div className="trending-photo-body">
-          <div className="trending">{!n.title ? "No Title" : n.title}</div>
           <img
             className="trending-photo"
             src={`https://image.tmdb.org/t/p/w500${n.poster_path}`}
             alt={n.title}
           />
+          <div className="trending">{!n.title ? "No Title" : n.title}</div>
         </div>
       </div>
     </Link>
