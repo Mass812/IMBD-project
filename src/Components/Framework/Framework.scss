@@ -42,7 +42,7 @@
   }
 
   .framework-under-header {
-    height: 20px;
+    height: 5px;
     flex-direction: row;
     background: rgb(0, 0, 0);
     background: -moz-linear-gradient(
@@ -68,7 +68,7 @@
     justify-content: left;
     align-items: center;
     text-align: center;
-    background-color: transparent;
+    background-color: black;
     justify-content: left;
     text-align: center;
     padding-bottom: 0;
@@ -76,11 +76,11 @@
     h1 {
       position: absolute;
       right: 5px;
-      top: 13px;
+      top: 2px;
     }
     .tmbd-issue{
       position: absolute;
-      top: 54px;
+      top: 44px;
       right: 0;
       font-size: 8px;
       font-weight: 200;
@@ -89,11 +89,11 @@
   }
   .greenLantern {
     size: contain;
-    height: 70px;
-    width: 70px;
+    height: 60px;
+    width: 60px;
 
     margin-top: 10px;
-    margin-bottom: -10px;
+   
   }
 
 

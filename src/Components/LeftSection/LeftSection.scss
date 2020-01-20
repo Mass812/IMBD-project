@@ -1,43 +1,41 @@
-
-
-
 .trending-card-body {
-    display:inline-table;
-    flex-direction: row;
+  display: inline-table;
+  flex-direction: row;
   //  text-align: center;
-    width: 160px;
-    height: 250px;
-    color: white;
-    text-align: center;
-    
-    box-sizing: content-box;
-    box-shadow: 0px 0px 10px 4px rgb(58, 199, 197);
-    margin: 20px;
-   border-radius: 5px;
-   flex-wrap: wrap;
+  width: 160px;
+  height: 250px;
+  color: white;
+  text-align: center;
+
+  box-sizing: content-box;
+  box-shadow: 0px 26px 15px -5px rgb(16, 37, 37);
+  margin: 30px;
+  border-radius: 5px;
+  flex-wrap: wrap;
+
+  &:hover {
+    box-shadow: 0px 26px 15px -5px rgba(32, 34, 33, 0.603);
+  }
 }
 
 .trending {
-flex: display;
-padding: 4px;
-font-size: 12px;
+  flex: display;
+  padding: 4px;
+  font-size: 12px;
 }
 
-.trending-photo-body{
-    background-color: transparent;
-    color: rgb(238, 238, 238);
-    font-weight: 500;
-    width: 160px;
-    height: 250px;
-    max-width: 300px;
-    max-height: 450px;
-    border-radius: inherit;
-    
+.trending-photo-body {
+  background-color: transparent;
+  color: rgb(238, 238, 238);
+  font-weight: 500;
+  width: 160px;
+  height: 250px;
+  max-width: 300px;
+  max-height: 450px;
+  border-radius: inherit;
 }
 
 .trending-photo {
-    height: inherit;
-    border-radius: inherit;
-    
+  height: inherit;
+  border-radius: inherit;
 }
-
