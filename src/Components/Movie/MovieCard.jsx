@@ -5,7 +5,7 @@ import MovieSearch from "./MovieSearch";
 import {Link} from 'react-router-dom';
 
 const MovieCard = () => {
-  const [searchTerm, setSearchTerm] = useState("green");
+  const [searchTerm, setSearchTerm] = useState("avengers");
   const [typed, setTyped] = useState("");
   const [moviesReturned, setMoviesReturned] = useState([]);
   const [movieDetails, setMovieDetails] = useState([]);
@@ -64,28 +64,33 @@ const MovieCard = () => {
   };
 
   const displayMovies = moviesReturned.map((n, id) => (
-    <Link to={`/trending/${n.id}`} style={{textDecoration: 'none'}}>
-
-   
-      <div
-        onLoad={() => moreInfo(n.id)}
-        key={id}
-        className="movie-card-container">
-        <div className="image-container">
+  <Link to={`/movie_detail/${n.id}`}>
+      <div key={n.id} className="trending-card-body">
+        <div className="trending-photo-body">
           <img
-            className="movie-card-image"
-            src={
-              typed && moviesReturned && n.poster_path === null
+            className="trending-photo"
+            src={ typed && moviesReturned && n.poster_path === null
                 ? require("../../Assets/greenLanternMWlogo2.jpg")
-                : `https://image.tmdb.org/t/p/w500${n.poster_path}`
-            }
+                : `https://image.tmdb.org/t/p/w500${n.poster_path}`}
             alt={n.title}
           />
+          <div className="trending">{!n.title ? "No Title" : n.title}</div>
         </div>
       </div>
-   
     </Link>
+
   ));
+
+
+
+
+
+
+
+
+
+
+
   console.log("one pull: ====> ", moviesReturned);
 
   return (

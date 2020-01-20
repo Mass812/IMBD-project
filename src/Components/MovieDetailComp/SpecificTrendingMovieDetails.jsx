@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import axios from 'axios';
+
 import './SpecificMovie.scss';
 
 const SpecificTrendingMovieDetails = () => {
@@ -10,6 +11,11 @@ const SpecificTrendingMovieDetails = () => {
   let idParam = useParams();
   let newID = idParam.id.substr(0);
   console.log(idParam, newID);
+
+
+  const close=()=>{
+  window.history.back();
+  }
 
   useEffect(() => {
     axios
@@ -25,6 +31,7 @@ const SpecificTrendingMovieDetails = () => {
   console.log('credit');
 
   const movieDetails = data.map((n, idx) => (
+    
     <div key={idx} className='specific-container'>
       <div className='container'>
         <div className='cellphone-container'>
@@ -100,6 +107,7 @@ const SpecificTrendingMovieDetails = () => {
                     key={ind}
                     style={{ color: 'white', paddingTop: '15px' }}>
                     <div style={{ color: 'white' }}>{el.name}</div>
+                  <h1 id='close' onClick={close}>close</h1>
                   </section>
                 ))}
               </div>
@@ -110,6 +118,10 @@ const SpecificTrendingMovieDetails = () => {
     </div>
   ));
 
-  return <div>{movieDetails}</div>;
+  return (
+  <div style={{zIndex: '0'}}>{movieDetails}</div>
+    
+  
+  );
 };
 export default SpecificTrendingMovieDetails;

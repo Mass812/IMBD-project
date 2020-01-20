@@ -16,6 +16,7 @@ function App() {
         <Switch>
           <Route path="/" exact={true} component={Framework} />
           <Route path="/trending/:id" component={SpecificTrendingMovieDetails} />
+          <Route path="/movie_detail/:id" component={SpecificTrendingMovieDetails} />
         </Switch>
       </div>
       {/* </ScrollReset> */}
