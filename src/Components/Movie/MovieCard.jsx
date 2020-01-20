@@ -66,7 +66,7 @@ const MovieCard = () => {
   };
 
   const displayMovies = moviesReturned.map((n, id) => (
-    <Link to={`/trending/${n.id}`}>
+    <Link to={`/trending/${n.id}`} style={{textDecoration: 'none'}}>
 
     <div key={id}>
       <div
