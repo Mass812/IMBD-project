@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./MovieCard.scss";
 import MovieSearch from "./MovieSearch";
+import {Link} from 'react-router-dom';
 
 const MovieCard = () => {
   const [searchTerm, setSearchTerm] = useState("green");
@@ -65,6 +66,8 @@ const MovieCard = () => {
   };
 
   const displayMovies = moviesReturned.map((n, id) => (
+    <Link to={`/trending/${n.id}`}>
+
     <div key={id}>
       <div
         onLoad={() => moreInfo(n.id)}
@@ -105,6 +108,7 @@ const MovieCard = () => {
         </div>
       </div>
     </div>
+    </Link>
   ));
   console.log("one pull: ====> ", moviesReturned);
 
