@@ -51,7 +51,7 @@ body {
 }
 .cellphone-container{  
   width:380px;
-  height:1000px;
+  height:1500px;
   background-color:#1e1b26;
   margin : 60px auto 0 auto;
   box-shadow:5px 5px 115px -14px black;
@@ -213,30 +213,54 @@ h5 {
   color:$accent-color;
   font-style: italic;
   @extend .elements-distance;
+  
 }
 .actors-row-parent{
+  text-align: center;
   width: 370px;
+  height: 215px;
   display: flex;
   flex:1;
   flex-direction: row;
-  padding: 3px;
+  padding: 5px;
   //flex-wrap: wrap;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+  scrollbar-track-color: teal;
+  scrollbar-arrow-color: darkgreen;
+  scrollbar-base-color: rgb(6, 82, 25);
+ 
+  
+  
 }
 
 
+
+
 .actors-row-box{
+  
 width: 370px;
 display:inline-flex;
 flex-direction: row;
+margin: 3px;
 justify-content: space-evenly;
 background-color:rgb(30,27,38);
+
 }
 
 
 .actors-box{
-  width: 75px;
+ 
   height: 100px;
   background-color: rgba(255, 255, 255, 0.116);
+}
+
+
+.cast-image {
+  height:105px;
+   width: 70px;
+   padding: 1px;
+   margin:0px;
 }
 /* TYPOGRAPHY ENDS */
 

@@ -35,8 +35,6 @@ const MovieCard = () => {
     setTyped(e.target.value);
   };
 
-  console.log("after useEffect movies returned: ", moviesReturned);
-
   const jump = e => {
     window.scrollTo(0, 0);
     e.target.blur();
@@ -84,28 +82,6 @@ const MovieCard = () => {
             alt={n.title}
           />
         </div>
-        <div className="movie-info">
-          <div className="movie-head-title">{n.title} </div>
-          <div className="movie-overview">{n.overview}</div>
-          <div className="movie-details">
-            <hr />
-            This movie was released on {n.release_date}
-            {movieDetails ? (
-              <div>
-                {" "}
-                {movieDetails.map((m, id) => (
-                  <div key={id} className="extra-detail-parent">
-                    <div>{m.runtime} minute runtime</div>
-                    {/* <div> {m.credits.crew[0].job} : {m.credits.crew[0].name} </div> 
-            <div> {m.credits.crew[1].job} : {m.credits.crew[1].name} </div>
-              <div>{m.runtime} minute runtime</div>
-              <div>{m.runtime} minute runtime</div> */}
-                  </div>
-                ))}{" "}
-              </div>
-            ) : null}
-          </div>
-        </div>
       </div>
     </div>
     </Link>
@@ -133,10 +109,7 @@ const MovieCard = () => {
         </button>
       </div>
 
-      <span>
-        "This product uses the TMDb API but is not endorsed or certified by
-        TMDb."
-      </span>
+     
     </div>
   );
 };

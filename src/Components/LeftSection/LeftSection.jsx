@@ -42,6 +42,7 @@ const LeftSection = () => {
     </Link>
   ));
 
+  
   return (
     <div>
       <div> {nowTrending} </div>
