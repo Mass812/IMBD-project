@@ -40,7 +40,7 @@ const SpecificTrendingMovieDetails = () => {
               <img
                 className='specific-backdrop'
                 src={
-                  n.poster_path === null
+                  n.backdrop_path === null
                     ? require('../../Assets/greenLanternMWlogo2.jpg')
                     : `https://image.tmdb.org/t/p/w500${n.backdrop_path}`
                 }
@@ -101,13 +101,13 @@ const SpecificTrendingMovieDetails = () => {
                   fontSize: '18px'
                 }}>
                 {' '}
+                  <h1 id='close' onClick={close}>close</h1>
                 Production Companies:
                 {n.production_companies.map((el, ind) => (
                   <section
                     key={ind}
                     style={{ color: 'white', paddingTop: '15px' }}>
                     <div style={{ color: 'white' }}>{el.name}</div>
-                  <h1 id='close' onClick={close}>close</h1>
                   </section>
                 ))}
               </div>

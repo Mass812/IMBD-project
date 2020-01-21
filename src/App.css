@@ -1,6 +1,6 @@
 html {
-    width: 100%;
-    height: 100%;
+    /* width: 100vw;
+    height: 100%; */
     box-sizing: content-box;
     
 }
@@ -8,7 +8,7 @@ html {
 body {
     font-family: 'Montserrat';
     width: 100%;
-    height: 100%;
+    height: 100vh;
     box-sizing: content-box;
     margin: -8px 0px -8px 0px;
  
