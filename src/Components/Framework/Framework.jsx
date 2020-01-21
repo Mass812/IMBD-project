@@ -25,10 +25,11 @@ const Framework = () => {
           {' '}
           New & Trending
           <LeftSection />
+         
         </section>
-        <section className='framework-section-two'>
-          <MovieCard />
-        </section>
+       <section className='framework-section-two'>
+           <MovieCard /> 
+        </section> 
       </div>
     </div>
   );

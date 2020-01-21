@@ -8,10 +8,28 @@ const MovieCard = () => {
   const [searchTerm, setSearchTerm] = useState("avengers");
   const [typed, setTyped] = useState("");
   const [moviesReturned, setMoviesReturned] = useState([]);
-  const [movieDetails, setMovieDetails] = useState([]);
   const [pageNum, setPageNum] = useState(1);
+  const [newlyReleased, setNewlyReleased] = useState([]);
 
   const API_KEY = process.env.REACT_APP_TMBD_KEY;
+
+  useEffect(() => {
+    // const pullNewReleases = `https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`;
+    const pullNewReleases = `https://api.themoviedb.org/3/discover/movie?api_key=2121f2ad7169f32e4b2cab5cf77d32cd&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`;
+    //const pullNewReleases = `https://api.themoviedb.org/3/trending/all/day?api_key=2121f2ad7169f32e4b2cab5cf77d32cd`;
+
+    axios
+      .get(pullNewReleases)
+      .then(res => res.data.results)
+      .then(res => {
+        setNewlyReleased(res);
+      })
+      .catch(err => console.error(err, "☹️"));
+
+    return () => {
+      console.log("left area use effect fired");
+    };
+  }, []);
 
   useEffect(() => {
     const movieDBSearch = `https://api.themoviedb.org/3/search/movie?api_key=2121f2ad7169f32e4b2cab5cf77d32cd&query=${searchTerm}&page=${pageNum}`;
@@ -26,6 +44,41 @@ const MovieCard = () => {
 
     return () => {};
   }, [searchTerm, pageNum, API_KEY]);
+
+  const nowTrending = newlyReleased.map((n, id) => (
+    <Link to={`/trending/${n.id}`}>
+      <div key={n.id} className="trending-card-body">
+        <div className="trending-photo-body">
+          <img
+            className="trending-photo"
+            src={ typed && moviesReturned && n.poster_path === null
+                  ? require("../../Assets/greenLanternMWlogo2.jpg")
+                  : `https://image.tmdb.org/t/p/w500${n.poster_path}`}
+              alt={n.title}
+            />
+          <div className="trending">{!n.title ? "No Title" : n.title}</div>
+        </div>
+      </div>
+    </Link>
+  ));
+
+  const displayMovies = moviesReturned.map((n, id) => (
+    <Link to={`/movie_detail/${n.id}`}>
+        <div key={n.id} className="trending-card-body">
+          <div className="trending-photo-body">
+            <img
+              className="trending-photo"
+              src={ typed && moviesReturned && n.poster_path === null
+                  ? require("../../Assets/greenLanternMWlogo2.jpg")
+                  : `https://image.tmdb.org/t/p/w500${n.poster_path}`}
+              alt={n.title}
+            />
+            <div className="trending">{!n.title ? "No Title" : n.title}</div>
+          </div>
+        </div>
+      </Link>
+  
+    ));
 
   const searchForTyped = () => {
     setSearchTerm(typed);
@@ -48,47 +101,12 @@ const MovieCard = () => {
     }
   };
 
-  const moreInfo = id => {
-    console.log(id);
-    const mDetails = `https://api.themoviedb.org/3/movie/${id}?api_key=2121f2ad7169f32e4b2cab5cf77d32cd&append_to_response=credits`;
-    axios
-      .get(mDetails)
-      .then(res => res.data)
-      .then(res => setMovieDetails([res]));
-    console.log("MovieDetails", movieDetails);
-  };
-
   const next = () => {
     setPageNum(pageNum + 1);
     window.scrollTo(0, 0);
   };
 
-  const displayMovies = moviesReturned.map((n, id) => (
-  <Link to={`/movie_detail/${n.id}`}>
-      <div key={n.id} className="trending-card-body">
-        <div className="trending-photo-body">
-          <img
-            className="trending-photo"
-            src={ typed && moviesReturned && n.poster_path === null
-                ? require("../../Assets/greenLanternMWlogo2.jpg")
-                : `https://image.tmdb.org/t/p/w500${n.poster_path}`}
-            alt={n.title}
-          />
-          <div className="trending">{!n.title ? "No Title" : n.title}</div>
-        </div>
-      </div>
-    </Link>
-
-  ));
-
-
-
-
-
-
-
-
-
+  
 
 
   console.log("one pull: ====> ", moviesReturned);
@@ -107,7 +125,7 @@ const MovieCard = () => {
           <button className="jump-button" onClick={jump}>
             Jump to Top
           </button>
-          {displayMovies}
+           {displayMovies} 
         </div>
         <button className="backForwardButton" onClick={next}>
           Next Page
