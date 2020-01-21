@@ -1,22 +1,39 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useHistory } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import ReactPlayer from 'react-player';
 
 import './SpecificMovie.scss';
 
 const SpecificTrendingMovieDetails = () => {
   const [data, setData] = useState([]);
-  const [credits, setCredits] = useState([]);
+  const [videos, setVideos] = useState([]);
 
   let idParam = useParams();
   let newID = idParam.id.substr(0);
   console.log(idParam, newID);
 
+  const close = () => {
+    window.history.back();
+  };
 
-  const close=()=>{
-  window.history.back();
-  }
+  useEffect(() => {
 
+    
+    
+    axios(
+      `https://api.themoviedb.org/3/movie/${newID}/videos?api_key=2121f2ad7169f32e4b2cab5cf77d32cd`
+      )
+        .then(res=> res.data.results[0])
+      .then(res=>setVideos(res))
+       
+  
+      
+    
+        
+      .catch(console.error('something went wrong'));
+  }, []);
+  
   useEffect(() => {
     axios
       .get(
@@ -24,14 +41,12 @@ const SpecificTrendingMovieDetails = () => {
         `https://api.themoviedb.org/3/movie/${newID}?api_key=2121f2ad7169f32e4b2cab5cf77d32cd&append_to_response=credits`
       )
       .then(res => setData([res.data]))
-      .then(res => res.data.credits.cast)
       .catch(err => console.error('Could not load data'));
   }, [newID]);
 
-  console.log('credit');
+  console.log(' video State', videos);
 
   const movieDetails = data.map((n, idx) => (
-    
     <div key={idx} className='specific-container'>
       <div className='container'>
         <div className='cellphone-container'>
@@ -101,7 +116,9 @@ const SpecificTrendingMovieDetails = () => {
                   fontSize: '18px'
                 }}>
                 {' '}
-                  <h1 id='close' onClick={close}>close</h1>
+                <h1 id='close' onClick={close}>
+                  close
+                </h1>
                 Production Companies:
                 {n.production_companies.map((el, ind) => (
                   <section
@@ -111,6 +128,15 @@ const SpecificTrendingMovieDetails = () => {
                   </section>
                 ))}
               </div>
+            
+                
+                    <ReactPlayer url={
+                    `https://www.youtube.com/watch?v=${videos.key}`}
+                                  height='300px'
+                                  width='100%'
+                                  light='true'
+                                  className='player'
+                                   />
             </div>
           </div>
         </div>
@@ -118,10 +144,15 @@ const SpecificTrendingMovieDetails = () => {
     </div>
   ));
 
+
+   
+
+             
   return (
-  <div style={{zIndex: '0'}}>{movieDetails}</div>
-    
-  
+    <div style={{ zIndex: '0' }}>
+      <div>{movieDetails}</div>
+ 
+    </div>
   );
 };
 export default SpecificTrendingMovieDetails;
