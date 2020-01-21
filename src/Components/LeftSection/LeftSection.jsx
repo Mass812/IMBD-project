@@ -27,7 +27,7 @@ const LeftSection = () => {
 
   console.log("new and trending", newlyReleased);
 
-  const nowTrending = newlyReleased.map((n, id) => (
+  const nowTrending = newlyReleased.map((n, idx) => (
     <Link to={`/trending/${n.id}`}>
       <div key={n.id} className="trending-card-body">
         <div className="trending-photo-body">
@@ -42,7 +42,7 @@ const LeftSection = () => {
     </Link>
   ));
 
-  
+
   return (
     <div>
       <div> {nowTrending} </div>

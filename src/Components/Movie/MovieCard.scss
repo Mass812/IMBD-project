@@ -5,7 +5,7 @@
 
 $color: black;
 
- @media all and (max-width: 510px){
+ @media all and (max-width: 450px){
   .movieCard-wrapper {
     grid-area: main;
     justify-content: center;
@@ -351,7 +351,7 @@ $color: black;
 //
 //
 //
- @media all and (min-width: 500px){
+ @media all and (min-width: 450px){
   .movieCard-wrapper {
     text-align: center;
     justify-content: center;

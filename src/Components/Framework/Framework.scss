@@ -1,7 +1,7 @@
 * {
   box-sizing: content-box;
 }
-@media all and (max-width: 810px) {
+@media all and (max-width: 450px) {
 
   
   .framework-container {
@@ -142,7 +142,7 @@
 }
 
 //fpr large phones
-@media (min-width: 811px) {
+@media (min-width: 450px) {
 
 .tmbd-issue{
   font-size: 8px;
