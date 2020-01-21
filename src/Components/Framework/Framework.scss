@@ -5,6 +5,8 @@
 
   
   .framework-container {
+    display: flex;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.096);
     justify-content: center;
     text-align: center;
@@ -42,7 +44,7 @@
   }
 
   .framework-under-header {
-    height: 5px;
+    height: 4px;
     flex-direction: row;
     background: rgb(0, 0, 0);
     background: -moz-linear-gradient(
@@ -64,47 +66,62 @@
   }
 
   .framework-header {
-    display: flex;
-    justify-content: left;
-    align-items: center;
+    //display: flex;
+
+    background-color: rgb(0, 0, 0);
+    font-family: 'Cinzel', serif;
+    justify-content: center;
     text-align: center;
-    background-color: black;
-    justify-content: left;
-    text-align: center;
+    font-size: 22px;
+    font-weight: 600;
+    text-shadow: 1px 1px rgb(59, 65, 59);
+    color: rgba(34, 80, 32, 0.877);
     padding-bottom: 0;
     margin: 0;
-    h1 {
-      position: absolute;
-      right: 5px;
-      top: 2px;
-    }
-    .tmbd-issue{
-      position: absolute;
-      top: 44px;
-      right: 0;
-      font-size: 8px;
-      font-weight: 200;
-      color: white;
-    }
   }
+
+  .title-top {
+    color: whitesmoke;
+    padding-bottom: 0;
+    margin-bottom: -24px;
+  }
+  
+  .title-bottom {
+  color: rgba(22, 107, 107, 0.979);
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  &::first-letter {
+    font-size: 42px;
+  }
+  }
+
   .greenLantern {
-
+    flex: 1;
+    justify-self: flex-start;
     size: contain;
-    height: 60px;
-    width: 60px;
-
-    margin-top: 10px;
-   
+    height: 300px;
+    width: 300px;
+    margin: 20px;
+    margin-top: 40px;
+    margin-bottom: 10px;
   }
 
-
+  .tmbd-issue{
+    font-size: 8px;
+    font-weight: 200;
+    color: white;
+  }
+  
 
   .framework-section-one {
-    flex: 1;
+   
+    display: inline-table;
+    //flex: 1;
+    flex-direction: column;
     border: 1px solid grey;
-    font-family: 'Cinzel', serif;
     color: white;
-    font-size: 30px;
+    padding-top: 40px;
+    font-size: 20px;
     justify-content: center;
     text-align: center;
     align-self: center;
@@ -112,6 +129,7 @@
     scrollbar-width: thin;
     scrollbar-color: green black;
     padding-bottom: 25px;
+    width: 100%;
   
   }
 
@@ -145,11 +163,6 @@
 //fpr large phones
 @media (min-width: 450px) {
 
-.tmbd-issue{
-  font-size: 8px;
-  font-weight: 200;
-  color: white;
-}
 
 
   .framework-container {
@@ -192,7 +205,7 @@
 }
 
   .framework-under-header {
-    height: 20px;
+    height: 12px;
     flex-direction: row;
     background: rgb(0, 0, 0);
     background: -moz-linear-gradient(
@@ -228,6 +241,21 @@
     margin: 0;
   }
 
+  .title-top {
+    color: whitesmoke;
+    padding-bottom: 0;
+    margin-bottom: -24px;
+  }
+  
+  .title-bottom {
+  color: rgba(22, 107, 107, 0.979);
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  &::first-letter {
+    font-size: 42px;
+  }
+  }
+
   .greenLantern {
     flex: 1;
     justify-self: flex-start;
@@ -239,7 +267,14 @@
     margin-bottom: 10px;
   }
 
-
+  .tmbd-issue{
+  
+    
+    font-size: 8px;
+    font-weight: 200;
+    color: white;
+  }
+  
   .framework-section-one {
     margin: 30px;
     display: flex;
@@ -275,3 +310,6 @@
     justify-self: center;
   }
 }
+
+
+
