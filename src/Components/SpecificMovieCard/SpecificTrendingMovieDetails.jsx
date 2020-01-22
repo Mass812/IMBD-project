@@ -137,10 +137,16 @@ const SpecificTrendingMovieDetails = () => {
                   <ReactPlayer
                     key={videos}
                     url={`https://www.youtube.com/watch?v=${videos}`}
-                    height='200px'
+                    height='300px'
                     width='100%'
                     light='true'
                     className='player'
+                    style={{
+                      justifySelf: 'center',
+                      textAlign: 'center',
+                      paddingTop: '30px',
+                      paddingBottom: '45px'
+                    }}
                   />
                 ) : (
                   <h5

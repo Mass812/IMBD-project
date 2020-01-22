@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import './LeftSection.scss';
+import '../../MovieThumb.scss'
 import { Link } from 'react-router-dom';
 
-const LeftSection = () => {
-  const [newlyReleased, setNewlyReleased] = useState([]);
+const PopularMovies = () => {
+  const [popularity, setPopularity] = useState([]);
 
-  const API_KEY = process.env.REACT_APP_TMBD_KEY;
   useEffect(() => {
     // const pullNewReleases = `https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`;
     const pullNewReleases = `https://api.themoviedb.org/3/discover/movie?api_key=2121f2ad7169f32e4b2cab5cf77d32cd&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`;
@@ -15,7 +14,7 @@ const LeftSection = () => {
     axios
       .get(pullNewReleases)
       .then(res => res.data.results)
-      .then(res => {setNewlyReleased(res)})
+      .then(res => {setPopularity(res)})
       .catch(err => console.error(err, '☹️'));
 
     return () => {
@@ -23,9 +22,9 @@ const LeftSection = () => {
     };
   }, []);
 
-  console.log('new and trending', newlyReleased);
+  console.log('Popular at the Moment', popularity);
 
-  const nowTrending = newlyReleased.map((n, idx) => (
+  const nowTrending = popularity.map((n, idx) => (
     <Link to={`/trending/${n.id}`}>
       <div key={n.id} className='trending-card-body'>
         <div className='trending-photo-body'>
@@ -46,4 +45,4 @@ const LeftSection = () => {
     </div>
   );
 };
-export default LeftSection;
+export default PopularMovies;

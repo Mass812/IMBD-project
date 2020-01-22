@@ -1,5 +1,5 @@
 import React from 'react';
-import './MovieCard.scss';
+import '../../MovieThumb.scss'
 
 
  const MovieSearch =(props )=>{
