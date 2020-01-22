@@ -109,7 +109,7 @@ const SpecificTrendingMovieDetails = () => {
                   color: '#16BFCC',
                   paddingTop: '40px',
                   margin: '5px',
-                  fontSize: '18px'
+                  fontSize: '16px'
                 }}>
                 {' '}
                 <h1 id='close' onClick={close}>
@@ -129,6 +129,7 @@ const SpecificTrendingMovieDetails = () => {
                       justifySelf: 'center',
                       textAlign: 'left',
                       paddingTop: '30px',
+                      paddingBottom: '30px',
                       color: '#1DC0B8',
                       fontStyle: ' sans-serif'
                     }}>Watch Trailer: </h4>
