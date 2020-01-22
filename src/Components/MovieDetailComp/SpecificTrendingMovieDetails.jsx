@@ -18,22 +18,18 @@ const SpecificTrendingMovieDetails = () => {
   };
 
   useEffect(() => {
-
-    
-    
     axios(
       `https://api.themoviedb.org/3/movie/${newID}/videos?api_key=2121f2ad7169f32e4b2cab5cf77d32cd`
-      )
-        .then(res=> res.data.results[0])
-      .then(res=>setVideos(res))
-       
-  
-      
-    
-        
-      .catch(console.error('something went wrong'));
+    )
+      .then(res => res.data.results[0])
+      .then(res => {
+        if (res.key) {
+          setVideos([res.key]);
+        }
+      })
+      .catch(err => console.log(err, 'something wen wrong'));
   }, []);
-  
+
   useEffect(() => {
     axios
       .get(
@@ -44,7 +40,7 @@ const SpecificTrendingMovieDetails = () => {
       .catch(err => console.error('Could not load data'));
   }, [newID]);
 
-  console.log(' video State', videos);
+  console.log(' video State', videos.length, videos);
 
   const movieDetails = data.map((n, idx) => (
     <div key={idx} className='specific-container'>
@@ -128,15 +124,28 @@ const SpecificTrendingMovieDetails = () => {
                   </section>
                 ))}
               </div>
-            
-                
-                    <ReactPlayer url={
-                    `https://www.youtube.com/watch?v=${videos.key}`}
-                                  height='300px'
-                                  width='100%'
-                                  light='true'
-                                  className='player'
-                                   />
+
+                {videos.length ? (
+                  <ReactPlayer
+                    url={`https://www.youtube.com/watch?v=${videos}`}
+                    height='200px'
+                    width='100%'
+                    light='true'
+                    className='player'
+                  />
+                ) : (
+                  <h5
+                    style={{
+                      justifySelf: 'center',
+                      textAlign: 'center',
+                      paddingTop: '30%'
+                    }}>
+                    Sorry, there is no trailer information in the database for
+                    this movie.
+                  </h5>
+                )}
+              <div>
+              </div>
             </div>
           </div>
         </div>
@@ -144,14 +153,9 @@ const SpecificTrendingMovieDetails = () => {
     </div>
   ));
 
-
-   
-
-             
   return (
     <div style={{ zIndex: '0' }}>
       <div>{movieDetails}</div>
- 
     </div>
   );
 };
