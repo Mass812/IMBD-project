@@ -125,8 +125,16 @@ const SpecificTrendingMovieDetails = () => {
                 ))}
               </div>
 
+                  <h4  style={{
+                      justifySelf: 'center',
+                      textAlign: 'left',
+                      paddingTop: '30px',
+                      color: '#1DC0B8',
+                      fontStyle: ' sans-serif'
+                    }}>Watch Trailer: </h4>
                 {videos.length ? (
                   <ReactPlayer
+                    key={videos}
                     url={`https://www.youtube.com/watch?v=${videos}`}
                     height='200px'
                     width='100%'
@@ -135,6 +143,7 @@ const SpecificTrendingMovieDetails = () => {
                   />
                 ) : (
                   <h5
+                    key={videos}
                     style={{
                       justifySelf: 'center',
                       textAlign: 'center',

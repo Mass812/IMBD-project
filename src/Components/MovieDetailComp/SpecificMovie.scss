@@ -401,7 +401,7 @@ background-color:rgb(30,27,38);
   $font-regular: 400;
   $mont-bold: 700;
   
-  $text-movie-title:36px;
+  $text-movie-title:30px;
   $text-summary:18px;
   $text-action-btn:14px;
   $text-movie-description:14px;
@@ -424,7 +424,8 @@ background-color:rgb(30,27,38);
   }
   
   h5 {
-    font-size:22px;
+    font-size:20px;
+    font-weight: 100;
     font-weight:$font-regular;
   }
   
@@ -446,7 +447,7 @@ background-color:rgb(30,27,38);
   .movie-review >li{
     text-decoration: none;
     font-family:$paragraph-font-family;
-    font-size:24px;
+    font-size:20px;
     color: rgb(21, 201, 214);
     width:300px;
     padding: 10px;
@@ -463,7 +464,7 @@ background-color:rgb(30,27,38);
   
   .movie-details {
     font-family:$paragraph-font-family;
-    font-size:24px;
+    font-size:20px;
     font-weight:$light;
     color:darken( $accent-color, 20% );
     @extend .elements-distance;
@@ -522,14 +523,14 @@ background-color:rgb(30,27,38);
   
   .actors-box{
    
-    height: 400px;
-    background-color: rgba(255, 255, 255, 0.116);
+    height: 250px;
+    background-color: rgb(30,27,38, 0.116);
   }
   
   
   .cast-image {
-    height:205px;
-     width: 150px;
+    height:150px;
+     width: 100px;
      padding: 1px;
      margin:0px;
   }
