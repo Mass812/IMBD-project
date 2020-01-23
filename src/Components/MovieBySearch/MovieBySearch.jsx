@@ -82,8 +82,8 @@ const MovieBySearch = () => {
         />
 
         <div className="rendered-items">
-       
            {displayMovies} 
+       
         <button className="backForwardButton" onClick={next}>
           Next Page
         </button>

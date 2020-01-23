@@ -27,7 +27,8 @@ const SpecificTrendingMovieDetails = () => {
           setVideos([res.key]);
         }
       })
-      .catch(err => console.log(err, 'something wen wrong'));
+      .catch(err => console.log(err, 'something wen wrong'))
+      .finally(window.scrollTo(0, 0));
   }, []);
 
   useEffect(() => {
@@ -126,43 +127,45 @@ const SpecificTrendingMovieDetails = () => {
                 ))}
               </div>
 
-                  <h4  style={{
-                      justifySelf: 'center',
-                      textAlign: 'left',
-                      paddingTop: '30px',
-                      paddingBottom: '30px',
-                      color: '#1DC0B8',
-                      fontStyle: ' sans-serif'
-                    }}>Watch Trailer: </h4>
-                {videos.length ? (
-                  <ReactPlayer
-                    key={videos}
-                    url={`https://www.youtube.com/watch?v=${videos}`}
-                    height='300px'
-                    width='100%'
-                    light='true'
-                    className='player'
-                    style={{
-                      justifySelf: 'center',
-                      textAlign: 'center',
-                      paddingTop: '30px',
-                      paddingBottom: '45px'
-                    }}
-                  />
-                ) : (
-                  <h5
-                    key={videos}
-                    style={{
-                      justifySelf: 'center',
-                      textAlign: 'center',
-                      paddingTop: '30%'
-                    }}>
-                    Sorry, there is no trailer information in the movieDetailsbase for
-                    this movie.
-                  </h5>
-                )}
-              <div>
-              </div>
+              <h4
+                style={{
+                  justifySelf: 'center',
+                  textAlign: 'left',
+                  paddingTop: '30px',
+                  paddingBottom: '30px',
+                  color: '#1DC0B8',
+                  fontStyle: ' sans-serif'
+                }}>
+                Watch Trailer:{' '}
+              </h4>
+              {videos.length ? (
+                <ReactPlayer
+                  key={videos}
+                  url={`https://www.youtube.com/watch?v=${videos}`}
+                  height='300px'
+                  width='100%'
+                  light='true'
+                  className='player'
+                  style={{
+                    justifySelf: 'center',
+                    textAlign: 'center',
+                    paddingTop: '30px',
+                    paddingBottom: '45px'
+                  }}
+                />
+              ) : (
+                <h5
+                  key={videos}
+                  style={{
+                    justifySelf: 'center',
+                    textAlign: 'center',
+                    paddingTop: '30%'
+                  }}>
+                  Sorry, there is no trailer information in the movieDetailsbase
+                  for this movie.
+                </h5>
+              )}
+              <div></div>
             </div>
           </div>
         </div>
