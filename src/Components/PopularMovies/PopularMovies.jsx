@@ -25,7 +25,7 @@ const PopularMovies = () => {
   console.log('Popular at the Moment', popularity);
 
   const nowTrending = popularity.map((n, idx) => (
-    <Link to={`/trending/${n.id}`}>
+    <Link key={n.id}to={`/trending/${n.id}`}>
       <div key={n.id} className='trending-card-body'>
         <div className='trending-photo-body'>
           <img

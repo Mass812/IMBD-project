@@ -6,7 +6,7 @@ import ReactPlayer from 'react-player';
 import './SpecificMovie.scss';
 
 const SpecificTrendingMovieDetails = () => {
-  const [data, setData] = useState([]);
+  const [movieDetails, setMovieDetails] = useState([]);
   const [videos, setVideos] = useState([]);
 
   let idParam = useParams();
@@ -36,13 +36,14 @@ const SpecificTrendingMovieDetails = () => {
         //  `https://api.themoviedb.org/3/movie/38700?api_key=2121f2ad7169f32e4b2cab5cf77d32cd&append_to_response=credits`
         `https://api.themoviedb.org/3/movie/${newID}?api_key=2121f2ad7169f32e4b2cab5cf77d32cd&append_to_response=credits`
       )
-      .then(res => setData([res.data]))
-      .catch(err => console.error('Could not load data'));
+      .then(res => setMovieDetails([res.data]))
+      .catch(err => console.error('Could not load movieDetails', err));
   }, [newID]);
 
   console.log(' video State', videos.length, videos);
+  console.log('  movieDetails', movieDetails.length, movieDetails);
 
-  const movieDetails = data.map((n, idx) => (
+  const displayMovieDetails = movieDetails.map((n, idx) => (
     <div key={idx} className='specific-container'>
       <div className='container'>
         <div className='cellphone-container'>
@@ -80,7 +81,7 @@ const SpecificTrendingMovieDetails = () => {
                 <div className='col2'>
                   <ul className='movie-review'>
                     <li>Rating: {n.vote_average} </li>
-                    <li>Poularity: {n.popularity}</li>
+                    <li>Popularity: {n.popularity}</li>
                   </ul>
                 </div>
               </div>
@@ -156,7 +157,7 @@ const SpecificTrendingMovieDetails = () => {
                       textAlign: 'center',
                       paddingTop: '30%'
                     }}>
-                    Sorry, there is no trailer information in the database for
+                    Sorry, there is no trailer information in the movieDetailsbase for
                     this movie.
                   </h5>
                 )}
@@ -171,7 +172,7 @@ const SpecificTrendingMovieDetails = () => {
 
   return (
     <div style={{ zIndex: '0' }}>
-      <div>{movieDetails}</div>
+      <div>{displayMovieDetails}</div>
     </div>
   );
 };

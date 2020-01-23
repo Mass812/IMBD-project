@@ -5,27 +5,27 @@ import axios from 'axios';
 
  const NewlyReleased =( )=>{
 
-    const [newlyReleased, setNewlyReleased] = useState([]);
+    const [nowPlaying, setNowPlaying] = useState([]);
 
   
     useEffect(() => {
-      // const pullNewReleases = `https://api.themoviedb.org/3/trending/all/day?api_key=${API_KEY}`;
-      const pullNewReleases = `https://api.themoviedb.org/3/discover/movie?api_key=2121f2ad7169f32e4b2cab5cf77d32cd&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`;
-      //const pullNewReleases = `https://api.themoviedb.org/3/trending/all/day?api_key=2121f2ad7169f32e4b2cab5cf77d32cd`;
+   //   https://api.themoviedb.org/3/movie/now_playing?api_key=2121f2ad7169f32e4b2cab5cf77d32cd&region=US      const pullNewReleases = `https://api.themoviedb.org/3/discover/movie?api_key=2121f2ad7169f32e4b2cab5cf77d32cd&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`;
+      const pullNowPlaying = `https://api.themoviedb.org/3/trending/all/day?api_key=2121f2ad7169f32e4b2cab5cf77d32cd`;
   
       axios
-        .get(pullNewReleases)
+        .get(pullNowPlaying)
         .then(res => res.data.results)
         .then(res => {
-          setNewlyReleased(res);
+          setNowPlaying(res);
         })
         .catch(err => console.error(err, "☹️"));
   
       return () => {
-        console.log("left area use effect fired");
+        console.log("left area use effect fired", );
       };
     }, []);
   
+    console.log('nowPlaying returning as: ', nowPlaying)
 
 
     return (  
