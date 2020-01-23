@@ -53,7 +53,7 @@ import '../../MovieThumb.scss';
             <div className="movieCard-wrapper">
              
         
-                <div className="rendered-items">
+                <div className="now-playing-rendered-items">
               
                    {displayNowPlaying} 
                 </div>

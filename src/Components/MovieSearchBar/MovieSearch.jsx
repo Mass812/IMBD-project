@@ -6,7 +6,10 @@ import '../../MovieThumb.scss'
     return (  
         
  <div className="movie-button--housing">
-          <h1>Movie Search</h1>
+           <div className='section-one-sub-title'>
+          
+          <h2>Search for a Movie</h2>
+        </div>
           <input
             className="search-box"
             placeholder="Search Here"

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import '../../MovieThumb.scss'
-import MovieSearch from "../MovieSearchBar/MovieSearch";
+import MovieSearchBar from "../MovieSearchBar/MovieSearch";
 import {Link} from 'react-router-dom';
 
 const MovieBySearch = () => {
@@ -52,10 +52,6 @@ const MovieBySearch = () => {
     setTyped(e.target.value);
   };
 
-  const jump = e => {
-    window.scrollTo(0, 0);
-    e.target.blur();
-  };
 
   const onEnter = event => {
     if (event.which === 13 || event.keyCode === 13) {
@@ -78,7 +74,7 @@ const MovieBySearch = () => {
   return (
     <div className="movieCard-wrapper">
       <div className="movie-housing-container">
-        <MovieSearch
+        <MovieSearchBar
           onChange={storeTypedFx}
           onBlur={searchForTyped}
           onKeyPress={onEnter}
@@ -86,14 +82,12 @@ const MovieBySearch = () => {
         />
 
         <div className="rendered-items">
-          <button className="jump-button" onClick={jump}>
-            Jump to Top
-          </button>
+       
            {displayMovies} 
-        </div>
         <button className="backForwardButton" onClick={next}>
           Next Page
         </button>
+        </div>
       </div>
 
      

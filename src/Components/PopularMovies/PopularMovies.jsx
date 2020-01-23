@@ -40,9 +40,14 @@ const PopularMovies = () => {
   ));
 
   return (
-    <div>
-      <div> {nowTrending} </div>
+    <div className="movieCard-wrapper">
+             
+        
+    <div className="now-playing-rendered-items">
+  
+       {nowTrending} 
     </div>
-  );
+
+  </div>  );
 };
 export default PopularMovies;

@@ -1,5 +1,11 @@
 
 
+.movieCard-wrapper{
+  padding: 0px;
+}
+
+
+
 .trending-card-body {
     display: inline-table;
    // display:flex;
@@ -49,10 +55,69 @@
     box-sizing: border-box;
     font-family: 'Montserrat', serif;
   }
+
+
   
   $color: black;
   
   @media all and (max-width: 450px) {
+
+    .trending-card-body {
+      display: inline-table;
+     // display:flex;
+      flex-direction: row;
+     
+      //  text-align: center;
+      width: 100px;
+      height: 150px;
+      color: white;
+      text-align: center;
+      box-sizing: content-box;
+      box-shadow: 0px 26px 15px -5px rgb(16, 37, 37);
+      margin: 10px;
+      border-radius: 2px;
+      //flex-wrap: wrap;
+      &:hover {
+        box-shadow: 0px 26px 15px -5px rgba(32, 34, 33, 0.603);
+      }
+    }
+    
+    .trending {
+      flex: display;
+    
+      padding: 4px;
+      font-size: 12px;
+    }
+    
+    .trending-photo-body {
+      background-color: transparent;
+      color: rgb(238, 238, 238);
+      font-weight: 500;
+      width: 160px;
+      height: 250px;
+      max-width: 300px;
+      max-height: 450px;
+      border-radius: inherit;
+    }
+    
+    .trending-photo {
+      height: inherit;
+      width: inherit;
+      border-radius: inherit;
+    }
+    
+  
+    * {
+      box-sizing: border-box;
+      font-family: 'Montserrat', serif;
+    }
+  
+
+     .movieCard-wrapper{
+       padding: 0px;
+     }
+
+
     .movie-button--housing {
       flex: 1;
       h1 {
@@ -60,6 +125,7 @@
         font-weight: 200;
         font-family: 'Cinzel';
         font-size: 20px;
+        padding: 0px;
       }
     }
     .search-box {
@@ -116,27 +182,6 @@
       }
     }
   
-    .jump-button {
-      position: fixed;
-      scroll-behavior: smooth;
-      right: 0;
-      top: 45px;
-      z-index: 13;
-      height: 60px;
-      width: 60px;
-      margin: 3px;
-      margin-top: 100%;
-      background-color: rgba(218, 235, 201, 0.609);
-      color: rgba(255, 255, 255, 0.486);
-      font-weight: 100;
-      font-size: 12px;
-      border-radius: 20%;
-      box-shadow: 0px 0px 2px rgb(37, 26, 26);
-      &:hover {
-        cursor: pointer;
-        box-shadow: 4px 4px 4px black;
-      }
-    }
   
     //subpage card
   }
@@ -193,6 +238,10 @@
   //
   //
   @media all and (min-width: 450px) {
+
+
+
+
     .movieCard-wrapper {
       text-align: center;
       justify-content: center;
