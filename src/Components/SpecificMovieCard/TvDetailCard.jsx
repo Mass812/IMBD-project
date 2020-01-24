@@ -50,16 +50,16 @@ const SpecificTrendingMovieDetails = () => {
                   <h1>{n.name}</h1>
                   <ul className='movie-gen'>
                     <li>
-                     Seasons:  {n.number_of_seasons} <b>/</b>{' '}
+                      {n.number_of_seasons} Seasons <b>/</b>{' '}
                     </li>
-                   
-          <li>
-          Last Episode Aired: {n.last_episode_to_air.air_date} <b>/</b>
-          </li>     
-                    
                     <li >
-                      {n.episode_run_time} min run time
+                      {n.number_of_episodes} Episode's <b>/</b>
                     </li>
+                              
+                      <li style={{color: 'teal'}}>
+                       {n.networks[0].name} 
+                      </li>     
+                    
                   </ul>
                 </div>
               </div>
