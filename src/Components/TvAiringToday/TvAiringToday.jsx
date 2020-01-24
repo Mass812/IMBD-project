@@ -3,37 +3,35 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import '../../MovieThumb.scss';
 
-const HotTv = () => {
-  const [topRatedTV, setTopRatedTV] = useState([]);
+const TvAiringToday = () => {
+  const [discoverTV, setDiscoverTV] = useState([]);
 
   useEffect(() => {
-    const topRatedShows = `https://api.themoviedb.org/3/tv/popular?api_key=2121f2ad7169f32e4b2cab5cf77d32cd&language=en-US&page=1`;
-
     axios
-      .get(topRatedShows)
+      .get(
+        `https://api.themoviedb.org/3/discover/movie?api_key=2121f2ad7169f32e4b2cab5cf77d32cd&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`
+      )
       .then(res => res.data.results)
-      .then(res => {
-        setTopRatedTV(res);
-      })
+      .then(res => setDiscoverTV(res))
       .catch(err => console.error(err, '☹️'));
 
     return () => {
-      console.log('HotTv', topRatedTV);
+      console.log('Airing TODAY State HAS : ', discoverTV);
     };
   }, []);
 
-  console.log('Top Rated TV returning as: ', topRatedTV);
+  console.log('Top Rated TV returning as: ', discoverTV);
 
-  const showTopRated = topRatedTV.map((n, idx) => (
-    <Link key={idx} to={`/trending-tv/${n.id}`}>
+  const showTopRated = discoverTV.map((n, idx) => (
+    <Link key={idx} to={`/trending/${n.id}`}>
       <div key={n.id} className='trending-card-body'>
         <div className='trending-photo-body'>
           <img
             className='trending-photo'
             src={`https://image.tmdb.org/t/p/w500${n.poster_path}`}
-            alt={n.name}
+            alt={'scene'}
           />
-          <div className='trending'>{!n.name ? 'No Title' : n.name}</div>
+          <div className='trending'>{!n.title ? 'No Title' : n.title}</div>
         </div>
       </div>
     </Link>
@@ -45,4 +43,4 @@ const HotTv = () => {
     </div>
   );
 };
-export default HotTv;
+export default TvAiringToday;

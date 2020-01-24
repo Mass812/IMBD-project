@@ -41,7 +41,7 @@ const SpecificTrendingMovieDetails = () => {
                     ? require('../../Assets/greenLanternMWlogo2.jpg')
                     : `https://image.tmdb.org/t/p/w500${n.backdrop_path}`
                 }
-                alt={n.title}
+                alt={n.name}
               />
             </div>
             <div className='text-movie-cont'>
@@ -84,12 +84,7 @@ const SpecificTrendingMovieDetails = () => {
               <h2 style={{ color: 'teal', fontWeight: '200'}}>Series Overview</h2>
                 <h5>{n.overview}</h5>
 
-                <div className='col2'>
-                  <ul className='movie-review'>
-                    <li>Rating: {n.vote_average} </li>
-                    <li>Popularity: {n.popularity}</li>
-                  </ul>
-                </div>
+             
               </div>
 
               {/* <div className='actors-row-parent'>
@@ -132,7 +127,7 @@ const SpecificTrendingMovieDetails = () => {
                 ))}
               </div>
 
-              <h4
+              {/* <h4
                 style={{
                   justifySelf: 'center',
                   textAlign: 'left',
@@ -142,7 +137,7 @@ const SpecificTrendingMovieDetails = () => {
                   fontStyle: ' sans-serif'
                 }}>
                 Watch Trailer:{' '}
-              </h4>
+              </h4> */}
          
               <div></div>
             </div>
