@@ -8,6 +8,8 @@ import MovieBySearch from '../MovieBySearch/MovieBySearch';
 import MovieSearchBar from '../MovieSearchBar/MovieSearch';
 import PopularMovies from '../PopularMovies/PopularMovies';
 import Footer from './Footer/Footer';
+import NewlyReleased from '../HotTv/HotTv';
+import HotTv from '../HotTv/HotTv';
 
 const Framework = () => {
   const [menuClicked, setMenuClicked] = useState(true);
@@ -34,6 +36,13 @@ const Framework = () => {
         <section className='framework-section-one'>
           <NowPlaying />
         </section>{' '}
+        <div className='section-one-sub-title'>
+          <h1>What's Hot on TV</h1>
+          <h2>Discover Something New</h2>
+        </div>
+        <section className='framework-section-one'>
+          <HotTv />
+        </section>{' '}
         <div className='section-two-sub-title'>
           <h1>Popular Searches</h1>
           <h2>Here's what others are interested in</h2>
@@ -41,13 +50,6 @@ const Framework = () => {
         <section className='framework-section-two'>
           <PopularMovies />
         </section>
-        <div className='section-one-sub-title'>
-          <h1>What's Hot on TV</h1>
-          <h2>Discover Something New</h2>
-        </div>
-        <section className='framework-section-one'>
-          <NowPlaying />
-        </section>{' '}
         <div className='section-one-sub-title'>
           <h1>Most Watched TV</h1>
           <h2>Discover what's Binge Worthy</h2>

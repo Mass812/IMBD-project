@@ -81,7 +81,7 @@ const MovieBySearch = () => {
           onSubmit={searchForTyped}
         />
 
-        <div className="rendered-items">
+        <div className="search-rendered-items">
            {displayMovies} 
        
         <button className="backForwardButton" onClick={next}>

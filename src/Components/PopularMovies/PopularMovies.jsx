@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import '../../MovieThumb.scss'
+import '../../MovieThumb.scss';
 import { Link } from 'react-router-dom';
 
 const PopularMovies = () => {
@@ -14,7 +14,9 @@ const PopularMovies = () => {
     axios
       .get(pullNewReleases)
       .then(res => res.data.results)
-      .then(res => {setPopularity(res)})
+      .then(res => {
+        setPopularity(res);
+      })
       .catch(err => console.error(err, '☹️'));
 
     return () => {
@@ -25,7 +27,7 @@ const PopularMovies = () => {
   console.log('Popular at the Moment', popularity);
 
   const nowTrending = popularity.map((n, idx) => (
-    <Link key={n.id}to={`/trending/${n.id}`}>
+    <Link key={n.id} to={`/trending/${n.id}`}>
       <div key={n.id} className='trending-card-body'>
         <div className='trending-photo-body'>
           <img
@@ -40,14 +42,9 @@ const PopularMovies = () => {
   ));
 
   return (
-    <div className="movieCard-wrapper">
-             
-        
-    <div className="now-playing-rendered-items">
-  
-       {nowTrending} 
+    <div className='movieCard-wrapper'>
+      <div className='rendered-items'>{nowTrending}</div>
     </div>
-
-  </div>  );
+  );
 };
 export default PopularMovies;

@@ -88,6 +88,11 @@ body {
 
 }
 
+.on-casting-image{
+  width: 230px;
+  height: 130px;
+}
+
 .specific-backdrop{
     position: absolute;
     width: inherit;
@@ -150,9 +155,10 @@ h1,h2,h3,h4,h5 {
 }
 
 h1 {
-  font-size:$text-movie-title;
+  font-size:33px;
   font-weight:$font-regular;
   color: rgb(29, 192, 184);
+  letter-spacing: 0px;
 }
 
 h3 {
