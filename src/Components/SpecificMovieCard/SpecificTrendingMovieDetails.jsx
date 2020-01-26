@@ -118,7 +118,7 @@ const SpecificTrendingMovieDetails = () => {
                   close
                 </h1>
                 Production Companies:
-                {n.production_companies.map((el, ind) => (
+                {n.production_companies.splice(0,3).map((el, ind) => (
                   <section
                     key={ind}
                     style={{ color: 'white', paddingTop: '15px' }}>
