@@ -1,12 +1,7 @@
 import React from 'react';
-import '../../App.scss'
+import '../../App.scss';
 
-
- const JumpToTopButton =( )=>{
-    return (  
-    <div>       
-Jump Up
-    </div>
-    )
+const JumpToTopButton = () => {
+	return <div>Jump Up</div>;
 };
 export default JumpToTopButton;
