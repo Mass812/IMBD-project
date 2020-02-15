@@ -14,7 +14,7 @@ const Header = () => {
 				alt={'Matt Wellman Logo'}
 			/>
 			<div className='title-top'>Movie</div>
-			<div className='title-bottom'>Warehouse</div>
+			<div className='title-bottom'>WatchTower</div>
 			{/* <FontAwesomeIcon
                     icon={faArrow}
                     className="icon-bar-li-bio"
